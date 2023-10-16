@@ -1,13 +1,13 @@
-# Chaos Toolkit Extension Template
+# Chaos Toolkit Extension for Honeycomb
 
-[![Version](https://img.shields.io/pypi/v/chaostoolkit-my-extension.svg)](https://img.shields.io/pypi/v/chaostoolkit-lib.svg)
-[![License](https://img.shields.io/pypi/l/chaostoolkit-my-extension.svg)](https://img.shields.io/pypi/l/chaostoolkit-lib.svg)
+[![Version](https://img.shields.io/pypi/v/chaostoolkit-honeycomb.svg)](https://img.shields.io/pypi/v/chaostoolkit-lib.svg)
+[![License](https://img.shields.io/pypi/l/chaostoolkit-honeycomb.svg)](https://img.shields.io/pypi/l/chaostoolkit-lib.svg)
 
 [![Build, Test, and Lint](https://github.com/chaostoolkit/chaostoolkit-extension-template/actions/workflows/build.yaml/badge.svg)](https://github.com/chaostoolkit/chaostoolkit-extension-template/actions/workflows/build.yaml)
-[![Python versions](https://img.shields.io/pypi/pyversions/chaostoolkit-my-extension.svg)](https://www.python.org/)
+[![Python versions](https://img.shields.io/pypi/pyversions/chaostoolkit-honeycomb.svg)](https://www.python.org/)
 
-This project should be used as a starting point to create your own
-Chaos Toolkit extension.
+This project contains Chaos Toolkit activities for the
+[Honeycomb](https://www.honeycomb.io/) platform.
 
 ## Install
 
@@ -19,13 +19,46 @@ environment where [chaostoolkit][] already lives.
 [chaostoolkit]: https://github.com/chaostoolkit/chaostoolkit
 
 ```
-$ pip install chaostoolkit-<your extension name here>
+$ pip install chaostoolkit-honeycomb
 ```
-
 
 ## Usage
 
-<Explain your probes and actions usage from the experiment.json here>
+```json
+{
+    "title": "SLO should not be impacted",
+    "description": "n/a",
+    "secrets": {
+        "honeycomb": {
+            "api_key": {
+                "type": "env",
+                "key": "HONEYCOMB_API_KEY"
+            }
+        }
+    },
+    "steady-state-hypothesis": {
+        "title": "Use SLO as Steady-State Hypothesis verification",
+        "probes": [
+            {
+                "name": "slo has enough budget left",
+                "type": "probe",
+                "tolerance": true,
+                "provider": {
+                    "type": "python",
+                    "secrets": ["honeycomb"],
+                    "module": "chaoshoneycomb.slo.probes",
+                    "func": "slo_has_enough_remaining_budget",
+                    "arguments": {
+                        "dataset_slug": "ds",
+                        "slo_id": "slo1",
+                        "min_budget": 7.5
+                    }
+                }
+            }
+        ]
+    }
+}
+```
 
 That's it!
 
@@ -33,7 +66,10 @@ Please explore the code to see existing probes and actions.
 
 ## Configuration
 
-<Specify any extra configuration your extension relies on here>
+Specify the Honeycomb API key either via the `secrets` block or via
+the `HONEYCOMB_API_KEY` environment variable. In that later case, you
+can in fact skip the declaration on the `secrets` block as the
+extension will look for it anyway.
 
 ## Test
 

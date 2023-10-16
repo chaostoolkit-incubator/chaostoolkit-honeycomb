@@ -3,14 +3,15 @@ requires = ["pdm-backend"]
 build-backend = "pdm.backend"
 
 [project]
-name = "chaostoolkit-extension-template"
+name = "chaostoolkit-honeycomb"
 dynamic = ["version"]
-description = "Template project for Chaos Toolkit extensions"
+description = "Chaos Toolkit extension for Honeycomb"
 authors = [
     {name = "Sylvain Hellegouarch", email = "sh@defuze.org"},
 ]
 dependencies = [
     "chaostoolkit-lib>=1.37",
+    "httpx[http2]>=0.24.1",
 ]
 requires-python = ">=3.7"
 readme = "README.md"
@@ -34,8 +35,8 @@ classifiers = [
 
 [project.urls]
 documentation = "https://chaostoolkit.org"
-repository = "https://github.com/chaostoolkit/chaostoolkit-extension-template"
-changelog = "https://github.com/chaostoolkit/chaostoolkit-extension-template/blob/master/CHANGELOG.md"
+repository = "https://github.com/chaostoolkit/chaostoolkit-honeycomb"
+changelog = "https://github.com/chaostoolkit/chaostoolkit-honeycomb/blob/master/CHANGELOG.md"
 
 [tool]
 
@@ -43,8 +44,8 @@ changelog = "https://github.com/chaostoolkit/chaostoolkit-extension-template/blo
 version = { source = "scm" }
 
 [tool.pdm.scripts]
-lint = {composite = ["ruff chaosext/", "isort --check-only --profile black chaosext/", "black --check --diff chaosext/", "mypy chaosext/", "bandit -r chaosext"]}
-format = {composite = ["isort --profile black chaosext/", "black chaosext/", "ruff chaosext/ --fix"]}
+lint = {composite = ["ruff chaoshoneycomb/", "isort --check-only --profile black chaoshoneycomb/", "black --check --diff chaoshoneycomb/", "mypy chaoshoneycomb/", "bandit -r chaoshoneycomb"]}
+format = {composite = ["isort --profile black chaoshoneycomb/", "black chaoshoneycomb/", "ruff chaoshoneycomb/ --fix"]}
 test = {cmd = "pytest"}
 
 [tool.pdm.dev-dependencies]
@@ -58,6 +59,7 @@ dev = [
     "isort>=5.11.5",
     "mypy>=1.4.1",
     "bandit>=1.7.5",
+    "respx>=0.20.2",
 ]
 
 [tool.black]
@@ -74,7 +76,7 @@ target-version = "py310"
 
 [tool.isort]
 line_length = 80
-known_first_party = 'chaosext'
+known_first_party = 'chaoshoneycomb'
 multi_line_output = 3
 include_trailing_comma = true
 force_grid_wrap = 0
@@ -83,4 +85,4 @@ combine_as_imports = true
 [tool.pytest.ini_options]
 minversion = "6.0"
 testpaths = ["tests"]
-addopts = "-v -rxs --cov chaosext --cov-report term-missing:skip-covered  --cov-report xml -p no:warnings"
+addopts = "-v -rxs --cov chaoshoneycomb --cov-report term-missing:skip-covered  --cov-report xml -p no:warnings"
