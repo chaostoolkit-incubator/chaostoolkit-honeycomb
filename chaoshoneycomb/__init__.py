@@ -1,6 +1,12 @@
 # -*- coding: utf-8 -*-
 import os
-from collections.abc import Generator
+import sys
+
+if sys.version_info < (3, 9):
+    from typing import Generator
+else:
+    from collections.abc import Generator
+
 from contextlib import contextmanager
 from typing import List, cast
 
