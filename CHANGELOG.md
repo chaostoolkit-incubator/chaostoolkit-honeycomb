@@ -2,7 +2,15 @@
 
 ## [Unreleased][]
 
-[Unreleased]: https://github.com/chaostoolkit/chaostoolkit-honeycomb/compare/0.1.0...HEAD
+[Unreleased]: https://github.com/chaostoolkit/chaostoolkit-honeycomb/compare/0.1.1...HEAD
+
+## [0.1.1][]
+
+[0.1.1]: https://github.com/chaostoolkit/chaostoolkit-honeycomb/compare/0.1.0...0.1.1
+
+### Fixed
+
+-   Minor cleanups
 
 ## [0.1.0][]
 
