@@ -164,3 +164,4 @@ cython_debug/
 .pdm-python
 .ruff_cache/
 junit-test-results.xml
+.venv/
