@@ -36,8 +36,8 @@ classifiers = [
 
 [project.urls]
 documentation = "https://chaostoolkit.org"
-repository = "https://github.com/chaostoolkit/chaostoolkit-honeycomb"
-changelog = "https://github.com/chaostoolkit/chaostoolkit-honeycomb/blob/master/CHANGELOG.md"
+repository = "https://github.com/chaostoolkit-incubator/chaostoolkit-honeycomb"
+changelog = "https://github.com/chaostoolkit-incubator/chaostoolkit-honeycomb/blob/master/CHANGELOG.md"
 
 [tool]
 
