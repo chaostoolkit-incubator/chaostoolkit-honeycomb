@@ -1,7 +1,7 @@
 # Chaos Toolkit Extension for Honeycomb
 
-[![Version](https://img.shields.io/pypi/v/chaostoolkit-honeycomb.svg)](https://img.shields.io/pypi/v/chaostoolkit-lib.svg)
-[![License](https://img.shields.io/pypi/l/chaostoolkit-honeycomb.svg)](https://img.shields.io/pypi/l/chaostoolkit-lib.svg)
+[![Version](https://img.shields.io/pypi/v/chaostoolkit-honeycomb.svg)](https://img.shields.io/pypi/v/chaostoolkit-honeycomb.svg)
+[![License](https://img.shields.io/pypi/l/chaostoolkit-honeycomb.svg)](https://img.shields.io/pypi/l/chaostoolkit-honeycomb.svg)
 
 [![Build, Test, and Lint](https://github.com/chaostoolkit/chaostoolkit-extension-template/actions/workflows/build.yaml/badge.svg)](https://github.com/chaostoolkit/chaostoolkit-extension-template/actions/workflows/build.yaml)
 [![Python versions](https://img.shields.io/pypi/pyversions/chaostoolkit-honeycomb.svg)](https://www.python.org/)
