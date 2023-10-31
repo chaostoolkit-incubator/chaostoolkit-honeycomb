@@ -75,7 +75,6 @@ def load_exported_activities() -> List[DiscoveredActivities]:
     Extract metadata from actions and probes exposed by this extension.
     """
     activities = []
-    activities.extend(
-        discover_probes("chaoshoneycomb.slo.probes"),
-    )
+    activities.extend(discover_probes("chaoshoneycomb.slo.probes"))
+    activities.extend(discover_probes("chaoshoneycomb.trigger.probes"))
     return activities
