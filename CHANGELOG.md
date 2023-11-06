@@ -4,6 +4,10 @@
 
 [Unreleased]: https://github.com/chaostoolkit/chaostoolkit-honeycomb/compare/0.2.0...HEAD
 
+### Added
+
+- Marker actions
+
 ## [0.2.0][]
 
 [0.2.0]: https://github.com/chaostoolkit/chaostoolkit-honeycomb/compare/0.1.1...0.2.0

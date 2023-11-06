@@ -12,6 +12,7 @@ from typing import List, cast
 
 import httpx
 from chaoslib.discovery.discover import (
+    discover_actions,
     discover_probes,
     initialize_discovery_result,
 )
@@ -77,4 +78,5 @@ def load_exported_activities() -> List[DiscoveredActivities]:
     activities = []
     activities.extend(discover_probes("chaoshoneycomb.slo.probes"))
     activities.extend(discover_probes("chaoshoneycomb.trigger.probes"))
+    activities.extend(discover_actions("chaoshoneycomb.marker.actions"))
     return activities
