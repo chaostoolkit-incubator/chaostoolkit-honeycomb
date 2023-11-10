@@ -8,6 +8,6 @@ elif sys.version_info < (3, 8):
 
 
 try:
-    __version__ = version("chaostoolkit-extension-template")
+    __version__ = version("chaostoolkit-honeycomb")
 except PackageNotFoundError:
     __version__ = "unknown"

@@ -25,8 +25,10 @@ from chaoslib.types import (
 )
 from logzero import logger
 
+from chaoshoneycomb.__version__ import __version__
+
+
 __all__ = ["__version__", "discover"]
-__version__ = "0.1.0"
 
 
 def discover(discover_system: bool = True) -> Discovery:
