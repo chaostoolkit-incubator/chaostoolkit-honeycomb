@@ -15,6 +15,7 @@
 ### Changed
 
 - Removed burn rates probes that weren't doing what I was thinking
+- Bump dependencies
 
 ## [0.4.0][]
 
