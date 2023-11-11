@@ -8,6 +8,10 @@
 
 [0.5.0]: https://github.com/chaostoolkit/chaostoolkit-honeycomb/compare/0.4.0...0.5.0
 
+### Added
+
+- Probes to retrieve query results
+
 ### Changed
 
 - Removed burn rates probes that weren't doing what I was thinking
