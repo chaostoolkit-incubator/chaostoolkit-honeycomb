@@ -2,7 +2,15 @@
 
 ## [Unreleased][]
 
-[Unreleased]: https://github.com/chaostoolkit/chaostoolkit-honeycomb/compare/0.4.0...HEAD
+[Unreleased]: https://github.com/chaostoolkit/chaostoolkit-honeycomb/compare/0.5.0...HEAD
+
+## [0.5.0][]
+
+[0.5.0]: https://github.com/chaostoolkit/chaostoolkit-honeycomb/compare/0.4.0...0.5.0
+
+### Changed
+
+- Removed burn rates probes that weren't doing what I was thinking
 
 ## [0.4.0][]
 
