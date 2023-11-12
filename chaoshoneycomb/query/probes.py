@@ -7,7 +7,11 @@ from chaoslib.types import Configuration, Secrets
 
 from chaoshoneycomb import honeycomb_client
 
-__all__ = ["query_results"]
+__all__ = [
+    "query_results",
+    "result_data_must_be_lower_than",
+    "result_data_must_be_greater_than",
+]
 
 
 def query_results(
@@ -37,3 +41,45 @@ def query_results(
 
             if (start + timeout) > time.time():
                 raise ActivityFailed("Failed to fetch query results in time")
+
+
+def result_data_must_be_lower_than(
+    dataset_slug: str,
+    query_result_id: str,
+    property_name: str,
+    max_value: float,
+    timeout: int = 30,
+    configuration: Configuration = None,
+    secrets: Secrets = None,
+) -> bool:
+    r = query_results(
+        dataset_slug, query_result_id, timeout, configuration, secrets
+    )
+
+    data = r["data"].get("results", [])
+    for d in data:
+        if property_name in d:
+            return cast(bool, d[property_name] < max_value)
+
+    raise ActivityFailed(f"Property {property_name} not part of query results")
+
+
+def result_data_must_be_greater_than(
+    dataset_slug: str,
+    query_result_id: str,
+    property_name: str,
+    max_value: float,
+    timeout: int = 30,
+    configuration: Configuration = None,
+    secrets: Secrets = None,
+) -> bool:
+    r = query_results(
+        dataset_slug, query_result_id, timeout, configuration, secrets
+    )
+
+    data = r["data"].get("results", [])
+    for d in data:
+        if property_name in d:
+            return cast(bool, d[property_name] > max_value)
+
+    raise ActivityFailed(f"Property {property_name} not part of query results")

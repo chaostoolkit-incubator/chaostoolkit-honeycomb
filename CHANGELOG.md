@@ -2,7 +2,15 @@
 
 ## [Unreleased][]
 
-[Unreleased]: https://github.com/chaostoolkit/chaostoolkit-honeycomb/compare/0.5.0...HEAD
+[Unreleased]: https://github.com/chaostoolkit/chaostoolkit-honeycomb/compare/0.6.0...HEAD
+
+## [0.6.0][]
+
+[0.6.0]: https://github.com/chaostoolkit/chaostoolkit-honeycomb/compare/0.5.0...0.6.0
+
+### Added
+
+- Probes to check query results to a threshold
 
 ## [0.5.0][]
 
