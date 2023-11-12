@@ -68,7 +68,7 @@ def result_data_must_be_greater_than(
     dataset_slug: str,
     query_result_id: str,
     property_name: str,
-    max_value: float,
+    min_value: float,
     timeout: int = 30,
     configuration: Configuration = None,
     secrets: Secrets = None,
@@ -80,6 +80,6 @@ def result_data_must_be_greater_than(
     data = r["data"].get("results", [])
     for d in data:
         if property_name in d:
-            return cast(bool, d[property_name] > max_value)
+            return cast(bool, d[property_name] > min_value)
 
     raise ActivityFailed(f"Property {property_name} not part of query results")

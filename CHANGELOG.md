@@ -2,7 +2,15 @@
 
 ## [Unreleased][]
 
-[Unreleased]: https://github.com/chaostoolkit/chaostoolkit-honeycomb/compare/0.6.0...HEAD
+[Unreleased]: https://github.com/chaostoolkit/chaostoolkit-honeycomb/compare/0.6.1...HEAD
+
+## [0.6.1][]
+
+[0.6.1]: https://github.com/chaostoolkit/chaostoolkit-honeycomb/compare/0.6.0...0.6.1
+
+### Fixed
+
+- Rename argument name from `amax_value` to `min_value`
 
 ## [0.6.0][]
 
