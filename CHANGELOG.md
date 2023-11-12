@@ -2,7 +2,15 @@
 
 ## [Unreleased][]
 
-[Unreleased]: https://github.com/chaostoolkit/chaostoolkit-honeycomb/compare/0.6.1...HEAD
+[Unreleased]: https://github.com/chaostoolkit/chaostoolkit-honeycomb/compare/0.6.2...HEAD
+
+## [0.6.2][]
+
+[0.6.2]: https://github.com/chaostoolkit/chaostoolkit-honeycomb/compare/0.6.1...0.6.2
+
+### Fixed
+
+- Support multiple properties in query probes
 
 ## [0.6.1][]
 
